@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/projects/obsidian/demo/","title":"🌱 Привет, мир!","tags":["test","garden","start-here"],"dg-note-properties":{"title":"🌱 Привет, мир!","date":"2026-04-17","tags":["test","garden","start-here"],"status":"🌲_evergreen"}}
+{"dg-publish":true,"permalink":"/projects/obsidian/demo/","title":"🌱 Привет, мир!","tags":["test","garden","start-here"],"dg-note-properties":{"permalink":"/projects/obsidian/demo/","title":"🌱 Привет, мир!","tags":["test","garden","start-here"],"status":"🌲_evergreen"}}
 ---
-
 
 # Привет, это мой цифровой сад
 
