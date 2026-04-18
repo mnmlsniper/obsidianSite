@@ -1,24 +1,28 @@
-body { outline: 3px solid #00ff00 !important; }
-
-/* ── Tokens ── */
+/*! brick accent theme */
+ 
 :root {
   --brick-400: #D85A30;
   --brick-600: #993C1D;
   --brick-800: #712B13;
   --brick-100: #F5C4B3;
   --brick-50:  #FAECE7;
- 
   --ink:       #1C1917;
   --ink-muted: #5F5E5A;
   --surface:   #FDFAF5;
   --surface-2: #F5F0EA;
   --border:    rgba(28, 25, 23, 0.12);
+  --radius:    8px;
+  --max-w:     720px;
  
-  --font-body: -apple-system, "Inter", "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
- 
-  --radius: 8px;
-  --max-w:  720px;
+  /* Перебиваем переменные Minimal */
+  --text-accent:          #993C1D !important;
+  --interactive-accent:   #D85A30 !important;
+  --link-color:           #993C1D !important;
+  --link-color-hover:     #D85A30 !important;
+  --background-primary:   #FDFAF5 !important;
+  --background-secondary: #F5F0EA !important;
+  --text-normal:          #1C1917 !important;
+  --text-muted:           #5F5E5A !important;
 }
  
 @media (prefers-color-scheme: dark) {
@@ -27,345 +31,128 @@ body { outline: 3px solid #00ff00 !important; }
     --brick-600: #D85A30;
     --brick-800: #F5C4B3;
     --brick-50:  #2a1810;
- 
     --ink:       #F0EDE8;
     --ink-muted: #A09890;
     --surface:   #171412;
     --surface-2: #211d1a;
     --border:    rgba(240, 237, 232, 0.1);
+ 
+    --text-accent:          #F0997B !important;
+    --interactive-accent:   #D85A30 !important;
+    --link-color:           #F0997B !important;
+    --background-primary:   #171412 !important;
+    --background-secondary: #211d1a !important;
+    --text-normal:          #F0EDE8 !important;
+    --text-muted:           #A09890 !important;
   }
 }
  
-/* ── Reset & base ── */
+/* ── Body ── */
 body {
-  background: var(--surface);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.75;
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  font-size: 16px !important;
+  line-height: 1.75 !important;
   -webkit-font-smoothing: antialiased;
-}
- 
-/* ── Layout ── */
-.content,
-.notes-entry-wrapper,
-article {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
- 
-/* ── Nav / header ── */
-.site-header,
-header nav {
-  border-bottom: 0.5px solid var(--border);
-  padding: 1rem 1.5rem;
-}
- 
-.site-name,
-.site-title {
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  color: var(--ink);
-  text-decoration: none;
-}
- 
-/* The dot in qa.mba */
-.site-name::after,
-.site-title::after {
-  content: "";
-}
- 
-nav a {
-  font-size: 13px;
-  color: var(--ink-muted);
-  text-decoration: none;
-  transition: color 0.15s;
-}
- 
-nav a:hover {
-  color: var(--brick-400);
-}
- 
-/* ── Headings ── */
-h1 {
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--ink);
-  margin: 2rem 0 0.75rem;
-}
- 
-h2 {
-  font-size: 1.35rem;
-  font-weight: 500;
-  line-height: 1.3;
-  color: var(--ink);
-  margin: 2.5rem 0 0.5rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 0.5px solid var(--border);
-}
- 
-h3 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--ink);
-  margin: 2rem 0 0.4rem;
-}
- 
-h4, h5, h6 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--ink-muted);
-  margin: 1.5rem 0 0.25rem;
 }
  
 /* ── Links ── */
 a {
-  color: var(--brick-600);
-  text-decoration: underline;
-  text-decoration-color: var(--brick-100);
-  text-underline-offset: 3px;
-  transition: color 0.15s, text-decoration-color 0.15s;
+  color: var(--brick-600) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--brick-100) !important;
+  text-underline-offset: 3px !important;
+  transition: color 0.15s, text-decoration-color 0.15s !important;
 }
  
 a:hover {
-  color: var(--brick-400);
-  text-decoration-color: var(--brick-400);
+  color: var(--brick-400) !important;
+  text-decoration-color: var(--brick-400) !important;
 }
  
-/* Internal wiki links */
-.internal-link {
-  color: var(--brick-600);
+.internal-link,
+.internal-link:visited {
+  color: var(--brick-600) !important;
+}
+ 
+/* ── Headings ── */
+h1 {
+  font-size: 2rem !important;
+  font-weight: 500 !important;
+  color: var(--ink) !important;
+  line-height: 1.2 !important;
+}
+ 
+h2 {
+  font-size: 1.35rem !important;
+  font-weight: 500 !important;
+  color: var(--ink) !important;
+  border-bottom: 0.5px solid var(--border) !important;
+  padding-bottom: 0.4rem !important;
+}
+ 
+h3 {
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  color: var(--ink) !important;
+}
+ 
+h4, h5, h6 {
+  font-weight: 500 !important;
+  color: var(--ink-muted) !important;
 }
  
 /* ── Tags ── */
 .tag,
 a.tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 3px 9px;
-  border-radius: 20px;
-  background: var(--brick-50);
-  color: var(--brick-800);
-  border: 0.5px solid var(--brick-100);
-  text-decoration: none;
-  margin: 2px 3px 2px 0;
-  transition: background 0.15s;
+  display: inline-block !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 3px 9px !important;
+  border-radius: 20px !important;
+  background: var(--brick-50) !important;
+  color: var(--brick-800) !important;
+  border: 0.5px solid var(--brick-100) !important;
+  text-decoration: none !important;
 }
  
 .tag:hover,
 a.tag:hover {
-  background: var(--brick-100);
-}
- 
-/* ── Note cards / index ── */
-.notes-entry,
-.note-card {
-  padding: 1.25rem 1.5rem;
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  margin-bottom: 12px;
-  transition: border-color 0.15s;
-}
- 
-.notes-entry:hover,
-.note-card:hover {
-  border-color: var(--brick-100);
-}
- 
-.notes-entry h3,
-.note-card h3 {
-  margin: 0 0 6px;
-  font-size: 15px;
-}
- 
-.notes-entry .note-excerpt,
-.note-card p {
-  font-size: 13px;
-  color: var(--ink-muted);
-  margin: 0;
-  line-height: 1.6;
+  background: var(--brick-100) !important;
 }
  
 /* ── Code ── */
 code {
-  font-family: var(--font-mono);
-  font-size: 0.875em;
-  background: var(--surface-2);
-  color: var(--brick-600);
-  padding: 0.15em 0.4em;
-  border-radius: 4px;
-  border: 0.5px solid var(--border);
+  color: var(--brick-600) !important;
+  background: var(--surface-2) !important;
+  border: 0.5px solid var(--border) !important;
+  border-radius: 4px !important;
 }
  
 pre {
-  background: var(--surface-2);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
-  overflow-x: auto;
-  margin: 1.5rem 0;
+  background: var(--surface-2) !important;
+  border: 0.5px solid var(--border) !important;
+  border-radius: var(--radius) !important;
 }
  
 pre code {
-  background: none;
-  border: none;
-  padding: 0;
-  color: var(--ink);
-  font-size: 0.875rem;
-  line-height: 1.6;
+  color: var(--ink) !important;
+  background: none !important;
+  border: none !important;
 }
  
 /* ── Blockquote ── */
 blockquote {
-  border-left: 2px solid var(--brick-400);
-  margin: 1.5rem 0;
-  padding: 0.75rem 1.25rem;
-  background: var(--brick-50);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  color: var(--ink-muted);
-  font-style: normal;
-}
- 
-/* ── Callouts (Obsidian style) ── */
-.callout {
-  border-radius: var(--radius);
-  border: 0.5px solid var(--border);
-  margin: 1.5rem 0;
-  overflow: hidden;
-}
- 
-.callout-title {
-  font-size: 13px;
-  font-weight: 500;
-  padding: 0.6rem 1rem;
-  background: var(--surface-2);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
- 
-.callout-content {
-  padding: 0.75rem 1rem;
-  font-size: 14px;
-}
- 
-/* ── Horizontal rule ── */
-hr {
-  border: none;
-  border-top: 0.5px solid var(--border);
-  margin: 2.5rem 0;
-}
- 
-/* ── Tables ── */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  margin: 1.5rem 0;
-}
- 
-th {
-  font-weight: 500;
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  border-bottom: 0.5px solid var(--border);
-  padding: 8px 12px;
-  text-align: left;
-}
- 
-td {
-  padding: 8px 12px;
-  border-bottom: 0.5px solid var(--border);
-}
- 
-tr:last-child td {
-  border-bottom: none;
-}
- 
-/* ── Graph view ── */
-.graph-view-container {
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
- 
-/* ── Backlinks ── */
-.backlinks {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 0.5px solid var(--border);
-}
- 
-.backlinks h4 {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 0.75rem;
-}
- 
-.backlinks ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
- 
-.backlinks li {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
- 
-/* ── Search ── */
-.search-input,
-input[type="search"] {
-  background: var(--surface-2);
-  border: 0.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 8px 14px;
-  font-size: 14px;
-  color: var(--ink);
-  width: 100%;
-  outline: none;
-  transition: border-color 0.15s;
-}
- 
-.search-input:focus,
-input[type="search"]:focus {
-  border-color: var(--brick-400);
-}
- 
-/* ── Scrollbar (webkit) ── */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
- 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
- 
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
-}
- 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--ink-muted);
+  border-left: 2px solid var(--brick-400) !important;
+  background: var(--brick-50) !important;
+  color: var(--ink-muted) !important;
+  font-style: normal !important;
 }
  
 /* ── Selection ── */
 ::selection {
-  background: var(--brick-50);
-  color: var(--brick-800);
+  background: var(--brick-50) !important;
+  color: var(--brick-800) !important;
 }
- 
