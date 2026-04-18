@@ -8,12 +8,14 @@
   --muted-text:    #b1ada1;
   --ink:           #2a1f1a;
   --ink-muted:     #6b5f5a;
-  --surface:       #f4f3ee;
-  --surface-2:     #eceae3;
-  --surface-card:  #ffffff;
   --border:        rgba(42, 31, 26, 0.10);
 
   /* Перебиваем переменные Minimal темы */
+  --surface:       #ffffff !important;   
+  --surface-2:     #f9f9f9 !important;    
+  --surface-card:  #ffffff !important;
+  --background-primary:   #ffffff !important;
+  --background-secondary: #f9f9f9 !important;
   --text-accent:          #c15f3c !important;
   --interactive-accent:   #c15f3c !important;
   --link-color:           #c15f3c !important;
