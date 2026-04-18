@@ -1,29 +1,17 @@
-/*! qa.mba — brick accent theme (shadcn Claude palette) */
-/*
-  Palette source: shadcn.io/theme/claude
-  primary:    #c15f3c  oklch(0.70 0.14 45)  — терракота, ссылки/акценты
-  background: #f4f3ee  oklch(0.97 0.02 70)  — кремовый фон страницы
-  card bg:    #ffffff                        — белый фон карточек
-  muted:      #b1ada1                        — тауп, второстепенный текст
-*/
-
 :root {
   /* ── Shadcn Claude palette ── */
-  --brick-primary: #c15f3c;   /* oklch(0.70 0.14 45) — основной акцент */
-  --brick-hover:   #a84e2e;   /* чуть темнее для :hover */
-  --brick-dark:    #8c3d21;   /* для тегов (текст) */
-  --brick-tint:    #f2e4dc;   /* светлый тинт для фона тегов, blockquote */
-  --brick-border:  #e0c4b8;   /* граница тегов */
-
-  --muted-text:    #b1ada1;   /* тауп */
-  --ink:           #2a1f1a;   /* почти-чёрный тёплый */
-  --ink-muted:     #6b5f5a;   /* вторичный текст */
-  --surface:       #f4f3ee;   /* кремовый фон страницы */
-  --surface-2:     #eceae3;   /* чуть темнее для карточек/code */
-  --surface-card:  #ffffff;   /* белый фон карточек */
+  --brick-primary: #c15f3c;
+  --brick-hover:   #a84e2e;
+  --brick-dark:    #8c3d21;
+  --brick-tint:    #f2e4dc;
+  --brick-border:  #e0c4b8;
+  --muted-text:    #b1ada1;
+  --ink:           #2a1f1a;
+  --ink-muted:     #6b5f5a;
+  --surface:       #f4f3ee;
+  --surface-2:     #eceae3;
+  --surface-card:  #ffffff;
   --border:        rgba(42, 31, 26, 0.10);
-  --radius:        8px;
-  --max-w:         720px;
 
   /* Перебиваем переменные Minimal темы */
   --text-accent:          #c15f3c !important;
@@ -36,31 +24,29 @@
   --text-muted:           #6b5f5a !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --brick-primary: #e08060;   /* светлее для тёмного фона */
-    --brick-hover:   #f09070;
-    --brick-dark:    #f2c4b0;
-    --brick-tint:    #2d1a12;
-    --brick-border:  #4a2a1e;
+/* Тёмная тема Obsidian (не системная!) */
+.theme-dark {
+  --brick-primary: #e08060;
+  --brick-hover:   #f09070;
+  --brick-dark:    #f2c4b0;
+  --brick-tint:    #2d1a12;
+  --brick-border:  #4a2a1e;
+  --muted-text:    #857e78;
+  --ink:           #f0ede8;
+  --ink-muted:     #a09890;
+  --surface:       #171412;
+  --surface-2:     #211d1a;
+  --surface-card:  #1e1a17;
+  --border:        rgba(240, 237, 232, 0.10);
 
-    --muted-text:    #857e78;
-    --ink:           #f0ede8;
-    --ink-muted:     #a09890;
-    --surface:       #171412;
-    --surface-2:     #211d1a;
-    --surface-card:  #1e1a17;
-    --border:        rgba(240, 237, 232, 0.10);
-
-    --text-accent:          #e08060 !important;
-    --interactive-accent:   #e08060 !important;
-    --link-color:           #e08060 !important;
-    --link-color-hover:     #f09070 !important;
-    --background-primary:   #171412 !important;
-    --background-secondary: #211d1a !important;
-    --text-normal:          #f0ede8 !important;
-    --text-muted:           #a09890 !important;
-  }
+  --text-accent:          #e08060 !important;
+  --interactive-accent:   #e08060 !important;
+  --link-color:           #e08060 !important;
+  --link-color-hover:     #f09070 !important;
+  --background-primary:   #171412 !important;
+  --background-secondary: #211d1a !important;
+  --text-normal:          #f0ede8 !important;
+  --text-muted:           #a09890 !important;
 }
 
 /* ── Body ── */
@@ -73,54 +59,27 @@ body {
 }
 
 /* ── Links ── */
-a {
+a, .internal-link, .internal-link:visited {
   color: var(--brick-primary) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--brick-border) !important;
   text-underline-offset: 3px !important;
   transition: color 0.15s, text-decoration-color 0.15s !important;
 }
-
-a:hover {
+a:hover, .internal-link:hover {
   color: var(--brick-hover) !important;
   text-decoration-color: var(--brick-hover) !important;
 }
 
-.internal-link,
-.internal-link:visited {
-  color: var(--brick-primary) !important;
-}
-
 /* ── Headings ── */
-h1 {
-  font-size: 2rem !important;
-  font-weight: 500 !important;
-  color: var(--ink) !important;
-  line-height: 1.2 !important;
-}
-
-h2 {
-  font-size: 1.35rem !important;
-  font-weight: 500 !important;
-  color: var(--ink) !important;
-  border-bottom: 0.5px solid var(--border) !important;
-  padding-bottom: 0.4rem !important;
-}
-
-h3 {
-  font-size: 1.1rem !important;
-  font-weight: 500 !important;
-  color: var(--ink) !important;
-}
-
-h4, h5, h6 {
-  font-weight: 500 !important;
-  color: var(--ink-muted) !important;
-}
+h1, h2, h3 { font-weight: 500 !important; color: var(--ink) !important; }
+h1 { font-size: 2rem !important; line-height: 1.2 !important; }
+h2 { font-size: 1.35rem !important; border-bottom: 0.5px solid var(--border) !important; padding-bottom: 0.4rem !important; }
+h3 { font-size: 1.1rem !important; }
+h4, h5, h6 { font-weight: 500 !important; color: var(--ink-muted) !important; }
 
 /* ── Tags ── */
-.tag,
-a.tag {
+.tag, a.tag {
   display: inline-block !important;
   font-size: 11px !important;
   font-weight: 500 !important;
@@ -133,33 +92,21 @@ a.tag {
   border: 0.5px solid var(--brick-border) !important;
   text-decoration: none !important;
 }
+.tag:hover, a.tag:hover { background: var(--brick-border) !important; }
 
-.tag:hover,
-a.tag:hover {
-  background: var(--brick-border) !important;
-}
-
-/* ── Code ── */
+/* ── Code & Blocks ── */
 code {
   color: var(--brick-primary) !important;
   background: var(--surface-2) !important;
   border: 0.5px solid var(--border) !important;
   border-radius: 4px !important;
 }
-
 pre {
   background: var(--surface-2) !important;
   border: 0.5px solid var(--border) !important;
-  border-radius: var(--radius) !important;
+  border-radius: 8px !important;
+  /* подсветка синтаксиса оставлена нетронутой */
 }
-
-pre code {
-  color: var(--ink) !important;
-  background: none !important;
-  border: none !important;
-}
-
-/* ── Blockquote ── */
 blockquote {
   border-left: 2px solid var(--brick-primary) !important;
   background: var(--brick-tint) !important;
