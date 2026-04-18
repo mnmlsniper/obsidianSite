@@ -1,21 +1,21 @@
 :root {
-
   /* Светлые фоны */
   --surface:       #ffffff !important;
   --surface-2:     #f9f9f9 !important;
   --surface-card:  #ffffff !important;
   --border:        rgba(42, 31, 26, 0.10);
-  --border:        rgba(42, 31, 26, 0.10);
-  --brick-primary: #de7356;   
+  
+  /* Claude palette (официальная от Geist) */
+  --brick-primary: #de7356;
   --brick-hover:   #c96246;   /* чуть темнее для :hover */
   --brick-dark:    #a84e36;   /* для тегов (текст) */
   --brick-tint:    #f5e6e0;   /* светлый тинт для фона тегов */
   --brick-border:  #ebd0c8;   /* граница тегов */
+  
   --muted-text:    #b1ada1;
   --ink:           #2a1f1a;
   --ink-muted:     #6b5f5a;
-  --border:        rgba(42, 31, 26, 0.10);
-
+  
   /* Перебиваем переменные Minimal темы */
   --background-primary:   #ffffff !important;
   --background-secondary: #f5f5f5 !important;
@@ -25,9 +25,6 @@
   --link-color-hover:     #c96246 !important;
   --text-normal:          #2a1f1a !important;
   --text-muted:           #6b5f5a !important;
-  --surface:       #ffffff !important;   
-  --surface-2:     #f9f9f9 !important;    
-  --surface-card:  #ffffff !important;
 }
 
 /* Тёмная тема Obsidian (не системная!) */
@@ -44,7 +41,7 @@
   --surface-2:     #211d1a;
   --surface-card:  #1e1a17;
   --border:        rgba(240, 237, 232, 0.10);
-
+  
   --text-accent:          #e08060 !important;
   --interactive-accent:   #e08060 !important;
   --link-color:           #e08060 !important;
@@ -72,17 +69,37 @@ a, .internal-link, .internal-link:visited {
   text-underline-offset: 3px !important;
   transition: color 0.15s, text-decoration-color 0.15s !important;
 }
+
 a:hover, .internal-link:hover {
   color: var(--brick-hover) !important;
   text-decoration-color: var(--brick-hover) !important;
 }
 
 /* ── Headings ── */
-h1, h2, h3 { font-weight: 500 !important; color: var(--ink) !important; }
-h1 { font-size: 2rem !important; line-height: 1.2 !important; }
-h2 { font-size: 1.35rem !important; border-bottom: 0.5px solid var(--border) !important; padding-bottom: 0.4rem !important; }
-h3 { font-size: 1.1rem !important; }
-h4, h5, h6 { font-weight: 500 !important; color: var(--ink-muted) !important; }
+h1, h2, h3 { 
+  font-weight: 500 !important; 
+  color: var(--ink) !important; 
+}
+
+h1 { 
+  font-size: 2rem !important; 
+  line-height: 1.2 !important; 
+}
+
+h2 { 
+  font-size: 1.35rem !important; 
+  border-bottom: 0.5px solid var(--border) !important; 
+  padding-bottom: 0.4rem !important; 
+}
+
+h3 { 
+  font-size: 1.1rem !important; 
+}
+
+h4, h5, h6 { 
+  font-weight: 500 !important; 
+  color: var(--ink-muted) !important; 
+}
 
 /* ── Tags ── */
 .tag, a.tag {
@@ -98,7 +115,10 @@ h4, h5, h6 { font-weight: 500 !important; color: var(--ink-muted) !important; }
   border: 0.5px solid var(--brick-border) !important;
   text-decoration: none !important;
 }
-.tag:hover, a.tag:hover { background: var(--brick-border) !important; }
+
+.tag:hover, a.tag:hover { 
+  background: var(--brick-border) !important; 
+}
 
 /* ── Code & Blocks ── */
 code {
@@ -107,12 +127,14 @@ code {
   border: 0.5px solid var(--border) !important;
   border-radius: 4px !important;
 }
+
 pre {
   background: var(--surface-2) !important;
   border: 0.5px solid var(--border) !important;
   border-radius: 8px !important;
   /* подсветка синтаксиса оставлена нетронутой */
 }
+
 blockquote {
   border-left: 2px solid var(--brick-primary) !important;
   background: var(--brick-tint) !important;
