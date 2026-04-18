@@ -1,52 +1,68 @@
-/*! brick accent theme */
- 
+/*! qa.mba — brick accent theme (shadcn Claude palette) */
+/*
+  Palette source: shadcn.io/theme/claude
+  primary:    #c15f3c  oklch(0.70 0.14 45)  — терракота, ссылки/акценты
+  background: #f4f3ee  oklch(0.97 0.02 70)  — кремовый фон страницы
+  card bg:    #ffffff                        — белый фон карточек
+  muted:      #b1ada1                        — тауп, второстепенный текст
+*/
+
 :root {
-  --brick-400: #D87756;   /* точный цвет — hover, иконки */
-  --brick-600: #C6603F;   /* основной кирпичный на светлом фоне */
-  --brick-800: #9E4A2E;   /* тёмный вариант для текста */
-  --brick-100: #F0C4B3;
-  --brick-50:  #FAF0EA;
-  --ink:       #1C1917;
-  --ink-muted: #5F5E5A;
-  --surface:   #FDFAF5;
-  --surface-2: #F5F0EA;
-  --border:    rgba(28, 25, 23, 0.12);
-  --radius:    8px;
-  --max-w:     720px;
- 
-  /* Перебиваем переменные Minimal */
-  --text-accent:          #993C1D !important;
-  --interactive-accent:   #D85A30 !important;
-  --link-color:           #993C1D !important;
-  --link-color-hover:     #D85A30 !important;
-  --background-primary:   #FDFAF5 !important;
-  --background-secondary: #F5F0EA !important;
-  --text-normal:          #1C1917 !important;
-  --text-muted:           #5F5E5A !important;
+  /* ── Shadcn Claude palette ── */
+  --brick-primary: #c15f3c;   /* oklch(0.70 0.14 45) — основной акцент */
+  --brick-hover:   #a84e2e;   /* чуть темнее для :hover */
+  --brick-dark:    #8c3d21;   /* для тегов (текст) */
+  --brick-tint:    #f2e4dc;   /* светлый тинт для фона тегов, blockquote */
+  --brick-border:  #e0c4b8;   /* граница тегов */
+
+  --muted-text:    #b1ada1;   /* тауп */
+  --ink:           #2a1f1a;   /* почти-чёрный тёплый */
+  --ink-muted:     #6b5f5a;   /* вторичный текст */
+  --surface:       #f4f3ee;   /* кремовый фон страницы */
+  --surface-2:     #eceae3;   /* чуть темнее для карточек/code */
+  --surface-card:  #ffffff;   /* белый фон карточек */
+  --border:        rgba(42, 31, 26, 0.10);
+  --radius:        8px;
+  --max-w:         720px;
+
+  /* Перебиваем переменные Minimal темы */
+  --text-accent:          #c15f3c !important;
+  --interactive-accent:   #c15f3c !important;
+  --link-color:           #c15f3c !important;
+  --link-color-hover:     #a84e2e !important;
+  --background-primary:   #f4f3ee !important;
+  --background-secondary: #eceae3 !important;
+  --text-normal:          #2a1f1a !important;
+  --text-muted:           #6b5f5a !important;
 }
- 
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --brick-400: #D87756;  /* в тёмной теме он же основной */
-    --brick-600: #E89070;
-    --brick-800: #F5C4B3;
-    --brick-50:  #2a1810;
-    --ink:       #F0EDE8;
-    --ink-muted: #A09890;
-    --surface:   #171412;
-    --surface-2: #211d1a;
-    --border:    rgba(240, 237, 232, 0.1);
- 
-    --text-accent:          #F0997B !important;
-    --interactive-accent:   #D85A30 !important;
-    --link-color:           #F0997B !important;
+    --brick-primary: #e08060;   /* светлее для тёмного фона */
+    --brick-hover:   #f09070;
+    --brick-dark:    #f2c4b0;
+    --brick-tint:    #2d1a12;
+    --brick-border:  #4a2a1e;
+
+    --muted-text:    #857e78;
+    --ink:           #f0ede8;
+    --ink-muted:     #a09890;
+    --surface:       #171412;
+    --surface-2:     #211d1a;
+    --surface-card:  #1e1a17;
+    --border:        rgba(240, 237, 232, 0.10);
+
+    --text-accent:          #e08060 !important;
+    --interactive-accent:   #e08060 !important;
+    --link-color:           #e08060 !important;
+    --link-color-hover:     #f09070 !important;
     --background-primary:   #171412 !important;
     --background-secondary: #211d1a !important;
-    --text-normal:          #F0EDE8 !important;
-    --text-muted:           #A09890 !important;
+    --text-normal:          #f0ede8 !important;
+    --text-muted:           #a09890 !important;
   }
 }
- 
+
 /* ── Body ── */
 body {
   background: var(--surface) !important;
@@ -55,26 +71,26 @@ body {
   line-height: 1.75 !important;
   -webkit-font-smoothing: antialiased;
 }
- 
+
 /* ── Links ── */
 a {
-  color: var(--brick-600) !important;
+  color: var(--brick-primary) !important;
   text-decoration: underline !important;
-  text-decoration-color: var(--brick-100) !important;
+  text-decoration-color: var(--brick-border) !important;
   text-underline-offset: 3px !important;
   transition: color 0.15s, text-decoration-color 0.15s !important;
 }
- 
+
 a:hover {
-  color: var(--brick-400) !important;
-  text-decoration-color: var(--brick-400) !important;
+  color: var(--brick-hover) !important;
+  text-decoration-color: var(--brick-hover) !important;
 }
- 
+
 .internal-link,
 .internal-link:visited {
-  color: var(--brick-600) !important;
+  color: var(--brick-primary) !important;
 }
- 
+
 /* ── Headings ── */
 h1 {
   font-size: 2rem !important;
@@ -82,7 +98,7 @@ h1 {
   color: var(--ink) !important;
   line-height: 1.2 !important;
 }
- 
+
 h2 {
   font-size: 1.35rem !important;
   font-weight: 500 !important;
@@ -90,18 +106,18 @@ h2 {
   border-bottom: 0.5px solid var(--border) !important;
   padding-bottom: 0.4rem !important;
 }
- 
+
 h3 {
   font-size: 1.1rem !important;
   font-weight: 500 !important;
   color: var(--ink) !important;
 }
- 
+
 h4, h5, h6 {
   font-weight: 500 !important;
   color: var(--ink-muted) !important;
 }
- 
+
 /* ── Tags ── */
 .tag,
 a.tag {
@@ -112,47 +128,47 @@ a.tag {
   text-transform: uppercase !important;
   padding: 3px 9px !important;
   border-radius: 20px !important;
-  background: var(--brick-50) !important;
-  color: var(--brick-800) !important;
-  border: 0.5px solid var(--brick-100) !important;
+  background: var(--brick-tint) !important;
+  color: var(--brick-dark) !important;
+  border: 0.5px solid var(--brick-border) !important;
   text-decoration: none !important;
 }
- 
+
 .tag:hover,
 a.tag:hover {
-  background: var(--brick-100) !important;
+  background: var(--brick-border) !important;
 }
- 
+
 /* ── Code ── */
 code {
-  color: var(--brick-600) !important;
+  color: var(--brick-primary) !important;
   background: var(--surface-2) !important;
   border: 0.5px solid var(--border) !important;
   border-radius: 4px !important;
 }
- 
+
 pre {
   background: var(--surface-2) !important;
   border: 0.5px solid var(--border) !important;
   border-radius: var(--radius) !important;
 }
- 
+
 pre code {
   color: var(--ink) !important;
   background: none !important;
   border: none !important;
 }
- 
+
 /* ── Blockquote ── */
 blockquote {
-  border-left: 2px solid var(--brick-400) !important;
-  background: var(--brick-50) !important;
+  border-left: 2px solid var(--brick-primary) !important;
+  background: var(--brick-tint) !important;
   color: var(--ink-muted) !important;
   font-style: normal !important;
 }
- 
+
 /* ── Selection ── */
 ::selection {
-  background: var(--brick-50) !important;
-  color: var(--brick-800) !important;
+  background: var(--brick-tint) !important;
+  color: var(--brick-dark) !important;
 }
