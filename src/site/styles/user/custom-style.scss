@@ -1,11 +1,11 @@
 /*! brick accent theme */
  
 :root {
-  --brick-400: #D85A30;
-  --brick-600: #993C1D;
-  --brick-800: #712B13;
-  --brick-100: #F5C4B3;
-  --brick-50:  #FAECE7;
+  --brick-400: #D87756;   /* точный цвет — hover, иконки */
+  --brick-600: #C6603F;   /* основной кирпичный на светлом фоне */
+  --brick-800: #9E4A2E;   /* тёмный вариант для текста */
+  --brick-100: #F0C4B3;
+  --brick-50:  #FAF0EA;
   --ink:       #1C1917;
   --ink-muted: #5F5E5A;
   --surface:   #FDFAF5;
@@ -27,8 +27,8 @@
  
 @media (prefers-color-scheme: dark) {
   :root {
-    --brick-400: #F0997B;
-    --brick-600: #D85A30;
+    --brick-400: #D87756;  /* в тёмной теме он же основной */
+    --brick-600: #E89070;
     --brick-800: #F5C4B3;
     --brick-50:  #2a1810;
     --ink:       #F0EDE8;
